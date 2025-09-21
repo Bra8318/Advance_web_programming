@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form action="" method="POST">
+    <form action="" method="GET">
         First Name: <input type="text" name="fname" required><br><br>
         Last Name: <input type="text" name="lname" required><br><br>
         <label for="gender">Gender</label>
@@ -23,13 +23,13 @@
 
 </html>
 <?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $fname = $_POST['fname'];
-    $lname = $_POST['lname'];
-    $gender = $_POST['gender'];
-    $roll = $_POST['roll'];
-    $phone = $_POST['phone'];
-    $course = $_POST['course'];
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+    $fname = $_GET['fname'] ?? 'Guest';
+    $lname = $_GET['lname'] ?? 'Guest';
+    $gender = $_GET['gender'] ?? 'Guest';
+    $roll = $_GET['roll'] ?? 'Guest';
+    $phone = $_GET['phone'] ?? 'Guest';
+    $course = $_GET['course'] ?? 'Guest';
     echo "hello,$fname $lname ,you are $gender ,and your course is $course";
 }
 ?>
